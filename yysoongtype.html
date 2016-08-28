@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<meta http-equiv="content-type" content="text/html;charset=gbk">
+	<head>
+		<title>Bing Search Test</title>
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+		<link rel="stylesheet" href="css/as.css" type="text/css">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+		function show(){
+         var random_bg=parseInt(Math.random()*66);
+<!-- 		 alert(random_bg); -->
+         var bg='url(img/bg-'+random_bg+'.jpg)';
+         $("body").css("background-image",bg,"width:","100%");
+		}
+		</script>
+		<style type = "text/css">
+			.logo{
+				margin:2px 18px 0 0;
+				background-image:url(img/logo2.png);
+				width:185px;
+				height:50px;
+				float:left;
+				top:0px;
+				margin-left:20%;
+			}
+			body{
+				background-attachment:fixed;
+				background-repeat:no-repeat;
+				background-size:cover;
+				background-position: center center;
+				-moz-background-size:cover;
+				-webkit-background-size:cover;
+			}
+			form{
+				margin:15px 18px 0 0;
+				float:left;
+				padding:2px;
+				border:1px solid rgba(0,0,0,.2);
+				overflow: hidden;
+			}
+			.search-input-text{
+				border:0;
+				float:left;
+				font-size:18px;
+				height:25px;
+				line-height:25px;
+				width:400px;
+				background: rgba(255, 255, 255, 0.4); 
+				padding-left:5px;
+				}
+			.search-input-button{
+				border:0;
+				cursor:pointer;
+				cursor:hand;
+				background-image:url(img/search25.png);
+				width:25px;
+				height:25px;
+				float:left;
+			}
+			.search-box{
+				position:absolute;
+				left:0;
+				top:0;
+				width: 100%;
+				background: rgba(255, 223, 255, 0.4);
+			}
+			
+		</style>
+	</head>
+	<body onload = "show()">
+		<div class = "bg-div">
+			<div class = "search-box">
+			<div class = "logo"></div>
+			<form class = "search-form" id="search-form">
+				<input type = "text" id = "search-input" class ="search-input-text" placeholder="毒药" name="q" autocomplete="off"/>
+				<input type = "submit" id = "search-button" class = "search-input-button" value=""/>
+			</form>
+			</div>
+		</div>
+		  <!-- 歌手介绍背景框 -->
+        <div class="user-head">
+            <div class="user-content">
+                <div class="user-basic">
+                    <!-- 头像 -->
+					<div class="avatar"><img src="http://downhdlogo.yy.com/hdlogo/640640/640/640/86/1092868475/u1092868475UwlzMsy.jpeg?20160815145126" onerror="this.src='http://yyweb.yystatic.com/pc/images/default_portrait-8dde4521cf.jpg?20160815145126'" alt="" />
+                        <div class="mask"></div>
+                    </div>
+					<!-- 简介 -->
+                    <div class="motto">
+                        少点套路，多点真诚</div>
+                    <!-- 关注按钮 -->
+					<div class="interact">
+                        <a href="javascript:;" data-yy="1163847368" title="关注" class="follow-btn">关注</a>
+                        </div>
+                </div>
+                <div class="user-info user-info-incomplete user-info-incomplete-other">
+                    <!-- 分享 -->
+					<div class="info-hd">
+                        <h1 class="nick">洛瑶</h1>
+                        <div class="share-wrapper"><a href="javascript:;" class="share-btn"><i></i>分享</a>
+                            <div class="layout share-layout hidden"><i class="enterstage"></i><i class="tri"></i><i class="tri2"></i>
+                                <div class="layout-inner bdsharebuttonbox">
+                                    <a href="#" title="分享到新浪微博" data-cmd="tsina" data-type="sina" class="sina"></a>
+                                    <a href="#" title="分享到QQ空间" data-cmd="qzone" data-type="zone" class="zone"></a>
+                                    <a href="#" title="分享到QQ好友" data-cmd="sqq" data-type="qq" class="qq"></a>
+                                    <a href="#" title="分享到百度贴吧" data-cmd="tieba" data-type="tieba" class="tieba"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<!-- 个人信息 -->
+                <div class="info">
+                        <ul>
+                            <li>生日：
+                                <span>
+                                12月15日</span>
+                            </li>
+                            <li>关注：<a class="follow-link" href="http://www.yy.com/u/follow/1163847368#follow">95</a></li>
+                            <li>所在地：
+                                <span>
+                                中国</span>
+                            </li>
+                            <li>粉丝：<a class="fans-link" href="http://www.yy.com/u/follow/1163847368#fans">197,994</a></li>
+                            <li>直播间ID：
+                                <span>
+                                <a class="zhibo-link" target="_blank" href="http://www.yy.com/50511">50511<i class="icon-zhibo hidden"></i></a></span>
+                            </li>
+                            <li>上次直播时间：
+                                <span>
+                                2016年08月17日 17:09</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+				<!-- 打卡信息 -->
+               <div class="clickin-wrapper">
+                        <a href="javascript:;" data-yy="1163847368" class="clickin-btn "><span class="click">打卡</span>
+                            <p class="notice"><span class="day">08月17日</span><span class="txt">今天已有<i class="nums">4847</i>位粉丝打卡</span></p>
+                        </a>
+                        <a href="javascript:;" class="clickin-btn-clicked  hidden"><span class="click">已打</span>
+                            <p class="notice"><span class="day">08月17日</span><span class="txt">已连续打卡<i class="times">0</i>天</span></p>
+                        </a>
+               </div>
+			</div>
+        </div>
+			   <!-- 页夹按钮 -->
+				<div class="user-nav">
+					<ul>
+						<li ><a href="http://www.yy.com/u/1163847368">主页</a></li>
+						<li ><a href="http://www.yy.com/u/live/1163847368">直播</a></li>
+						<li class="active"><a href="http://www.yy.com/u/works/1163847368">作品</a></li>
+						<li ><a href="http://www.yy.com/u/photo/albums/1163847368">相册</a></li>
+						<li ><a href="http://www.yy.com/u/follow/1163847368#follow">关注</a></li>
+					</ul>
+				</div>
+<div class="wrapper">
+    <!-- 子夹下面的分类按钮 -->
+	<div class="works-tab-head">
+      <ul class="cf">
+<li class="shenqu active">神曲（<span class="sqCount">8</span>）</li>
+<li class="duanpai last ">短拍（<span class="tvCount">6</span>）</li>
+      </ul>
+    </div>
+	<!-- 作品短拍显示 -->
+    <div class="works-tab-body">
+      <ul class="cf">
+			<!-- 作品 -->
+        <li class="works-tc-item shenqu active">
+            <div class="shenqu-non-empty"><div class="col-list">
+                    <ul class="video-user-list">
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1108206729086740561" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                       <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/djIzNzQ1Mjk0YzljYTA5Y2NmODc2MzI5ZGJhYzI1MmI5MTM5NjcxMDE5MQ_27.jpg" alt=""/></div>
+									</div>
+                                    <div class="op-time">00:04:32</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">【逝去的爱】</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>48865</span>
+                                <span class="aud-count"><i class="icon-eye"></i>59624</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1123685306204799701" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/djVmMGRhYjRlZDI4MjkzYjZmYmE5MTAwODk3MzI4ZDU0MTM5NzU4MzU5_9.jpg" alt=""/></div>
+                                    </div>
+                                    <div class="op-time">00:01:30</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">可爱颂【眼保健操版】</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>95329</span>
+                                <span class="aud-count"><i class="icon-eye"></i>18.3万</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1125166348027581533" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/dmJlZmFhYjcyYTkxM2QxYTY2ODc1OWMxYjBhZWI3NmI4MTM1MTc0MDc5_25.jpg" alt=""/></div>
+                                    </div>
+                                    <div class="op-time">00:01:04</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">摔坏了东西爷揍</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>37469</span>
+                                <span class="aud-count"><i class="icon-eye"></i>10.8万</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1101511630994546327" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/dmJlZmFhYjcyYTkxM2QxYTY2ODc1OWMxYjBhZWI3NmI4MTM1MTc0MDc5_25.jpg" alt=""/></div>
+                                    </div>
+                                    <div class="op-time">00:04:11</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">我好喜欢你&hearts;【关注618文家周年庆】</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>174212</span>
+                                <span class="aud-count"><i class="icon-eye"></i>40224</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1133457265086644874" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/djliNGYxMThjMjFjMjNjMTViNDVjN2IyZTlhNTYzYzY2MTMyMjQyMDU5_27.jpg" alt=""  /></div>
+                                    </div>
+                                    <div class="op-time">00:04:38</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">舍不得【50511】</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>42234</span>
+                                <span class="aud-count"><i class="icon-eye"></i>39948</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1144594055935155016" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/djgxZGNkYWJiZmE1MTNmZTE2MjBhNTY1MzlkMjAxYjY4MTIwMDI5MTcxMg_22.jpg" alt=""  /></div>
+                                    </div>
+                                    <div class="op-time">00:03:47</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">其实都没有【改编版】</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>38216</span>
+                                <span class="aud-count"><i class="icon-eye"></i>34819</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1130599056196796412" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/dmZkNTFhZGJiMzhmMDdlNjZmZGFhN2IyNTE3ZTNmN2VjMTIwMjE0ODk1Nw_32.jpg" alt=""  /></div>
+                                    </div>
+                                    <div class="op-time">00:05:20</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">丫头【改编版】</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>157951</span>
+                                <span class="aud-count"><i class="icon-eye"></i>15.2万</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      <li class="video-user-item">
+                          <a class="video-user-box" href="http://www.yy.com/s/1086139876104414559" target="_blank">
+                            <div class="video-user-pic">
+                                <div class="video-pic">
+                                    <div class="video-pic-inner">
+                                        <div class="pic-default1"><img src="http://godsong.bs2dl.yy.com/djgxY2RlODM1MzE4M2E1ZDM1MTU3YWVkZWRjNjc4ODEyMTE0MDExMjcwOA_25.jpg" alt=""  /></div>
+                                    </div>
+                                    <div class="op-time">00:04:19</div>
+                                    <div class="mask"></div><i class="icon-play"></i>
+                                </div>
+                           </div>
+                            <div class="video-user-info">
+                              <p class="user-i-title">再见只是陌生人</p>
+                              <p class="user-video-op">
+                                <span class="op-like"><i class="icon-user-like"></i>4618</span>
+                                <span class="aud-count"><i class="icon-eye"></i>5281</span>
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    <!-- <div class="sq-loading">
+                      <img src="http://yyweb.yystatic.com/pc/images/loading-grey-d567749095.gif?20160815145126" alt="" />
+                    </div>
+					 -->
+                  </div>
+                  <div class="shenqu-foot">
+                    <div id="paginator" class="paginator"> </div>
+                  </div>
+                </div>
+              </li>
+			  <!-- 短拍 -->
+        <li class="works-tc-item duanpai">
+          <div class="duanpai-non-empty">
+                <ul id="container">
+                  <li class="waterfall-item" data-resid="9197985199465099375">
+                      <a href="http://www.yy.com/d/9197985199465099375" target="_blank" class="waterfall-box">
+                      <div class="image-box"><img src="http://godmusic.bs2dl.yy.com/cDMzYzJmZjFjMGM3OWRmYzhkYTlkYmRlNTJiOWY3NjljMTMzODYxNzEy" alt="" />
+                        <div class="mask"></div><i class="icon-play"></i>
+                        </div>
+                      <div class="text-box cf">
+                        <div class="like-box"><span class="icon-like"></span>1105</div>
+                        <div class="time-box">2个月前</div>
+                      </div>
+                      </a>
+                    </li>
+                  <li class="waterfall-item" data-resid="9186212225763245759">
+                      <a href="http://www.yy.com/d/9186212225763245759" target="_blank" class="waterfall-box">
+                      <div class="image-box"><img src="http://godmusic.bs2dl.yy.com/cDk1YzcyZjY2NWVjMDE4MzQ3MGFkYjBkNzFlZWYxMzZjMTMyMjkxMDg5" alt="" />
+                        <div class="mask"></div><i class="icon-play"></i>
+                        </div>
+                      <div class="text-box cf">
+                        <div class="like-box"><span class="icon-like"></span>524</div>
+                        <div class="time-box">2个月前</div>
+                      </div>
+                      </a>
+                    </li>
+                  <li class="waterfall-item" data-resid="9165068323126914920">
+                      <a href="http://www.yy.com/d/9165068323126914920" target="_blank" class="waterfall-box">
+                      <div class="image-box"><img src="http://godmusic.bs2dl.yy.com/cDMxYTkzNjQzNzNkNmU4ODc1NzY1ODQ3ZmU5ZDJlODkxMTIwMjM1MjE2MA" alt="" />
+                        <div class="mask"></div><i class="icon-play"></i>
+                        </div>
+                      <div class="text-box cf">
+                        <div class="like-box"><span class="icon-like"></span>1229</div>
+                        <div class="time-box">3个月前</div>
+                      </div>
+                      </a>
+                    </li>
+                  <li class="waterfall-item" data-resid="9164873011859082126">
+                      <a href="http://www.yy.com/d/9164873011859082126" target="_blank" class="waterfall-box">
+                      <div class="image-box"><img src="http://godmusic.bs2dl.yy.com/cGZkNTFhZGJiMzhmMDdlNjZmZGFhN2IyNTE3ZTNmN2VjMTIwMjE5NzAw" alt="" />
+                        <div class="mask"></div><i class="icon-play"></i>
+                        </div>
+                      <div class="text-box cf">
+                        <div class="like-box"><span class="icon-like"></span>3070</div>
+                        <div class="time-box">5个月前</div>
+                      </div>
+                      </a>
+                    </li>
+                  <li class="waterfall-item" data-resid="9207860136833613037">
+                      <a href="http://www.yy.com/d/9207860136833613037" target="_blank" class="waterfall-box">
+                      <div class="image-box"><img src="http://godmusic.bs2dl.yy.com/dmYyMDEwMzIxODUwNjZmYTM0ZTBlMGQ3ZWFhOGM5ZDRkOTU2MTU4NjQ_0.jpg" alt="" />
+                        <div class="mask"></div><i class="icon-play"></i>
+                        </div>
+                      <div class="text-box cf">
+                        <div class="like-box"><span class="icon-like"></span>654</div>
+                        <div class="time-box">11个月前</div>
+                      </div>
+                      </a>
+                    </li>
+                  <li class="waterfall-item" data-resid="9195604052494788795">
+                      <a href="http://www.yy.com/d/9195604052494788795" target="_blank" class="waterfall-box">
+                      <div class="image-box"><img src="http://godmusic.bs2dl.yy.com/dmNkMDYxNzJjOTRlNTU4MTRkYWNhODUzNGQ2ZGE1NWMxOTQyNjQ5NjQ_0.jpg" alt="" />
+                        <div class="mask"></div><i class="icon-play"></i>
+                        </div>
+                      <div class="text-box cf">
+                        <div class="like-box"><span class="icon-like"></span>688</div>
+                        <div class="time-box">11个月前</div>
+                      </div>
+                      </a>
+                    </li>
+                  </ul>
+                <a id="waterfall-more" href="javascript:void(0);">更多短拍</a>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+		<!-- 作品短拍图片显示加切换按钮 -->
+	</body>
+</html>

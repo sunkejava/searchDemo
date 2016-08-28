@@ -1,0 +1,128 @@
+<html>
+	<meta http-equiv="content-type" content="text/html;charset=gbk">
+	<head>
+		<title>Bing Search Test</title>
+		<meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+		<script type="text/javascript">
+		function show(){
+         var random_bg=parseInt(Math.random()*66);
+<!-- 		 alert(random_bg); -->
+         var bg='url(img/bg-'+random_bg+'.jpg)';
+         $("body").css("background-image",bg);
+		}
+		</script>
+		<style type = "text/css">
+			body{
+				background-color:#333;
+			}
+			#showimg{
+				left:0;
+				top:0;
+				position:absolute;
+			}
+			.logo{
+				margin:-25px 18px 0 0;
+				background-image:url(img/logo.png);
+				width:370px;
+				height:100px;
+				float:left;
+				top:0px;
+			}
+			form{
+				float:left;
+				padding:2px;
+				border:1px solid rgba(0,0,0,.2);
+				overflow: hidden;
+			}
+			.search-input-text{
+				border:0;
+				float:left;
+				font-size:25px;
+				height:44px;
+				line-height:44px;
+				outline:none;
+				width:800px;
+				background: rgba(255, 255, 255, 0.4); 
+				padding-left:5px;
+			}
+			.search-input-button{
+				border:0;
+				cursor:pointer;
+				cursor:hand;
+				background-image:url(img/search45.png);
+				width:45px;
+				height:45px;
+				float:left;
+			}
+			.search-box{
+				position:absolute;
+				margin:250px  0  0  200px;
+			}
+			.suggest{
+				width:800px;
+				border:1px solid #999;
+				background: rgba(255, 255, 255, 0.4);
+			}
+			.suggest ul {
+			list-style:none;
+			margin:0;
+			padding:0;}
+			.suggest ul li{
+			padding:3px;
+			font-size:25px;
+			line-height:25px;
+			cursor:pointer;
+			cursor:hand;
+			}
+			.suggest ul li:hover{
+				text-decoration:underline;
+				background:rgba(255, 175, 255, 0.15);
+			}
+		</style>
+	</head>
+	<body onload = "show()">
+		<div class = "bg-div">
+			<div class = "search-box">
+			<div class = "logo"></div>
+			<form class = "search-form" id="search-form">
+				<input type = "text" id = "search-input" class ="search-input-text" placeholder="输入要搜索内容" name="q" autocomplete="off"/>
+				<input type = "submit" id = "search-button" class = "search-input-button" value=""/>
+			</form>
+			</div>
+		</div>
+		<div class = "suggest" id = "search-suggest" style="display:none">
+			<ul id="search-results">
+				<li>搜索结果1</li>
+				<li>搜索结果2</li>
+				<li>搜索结果3</li>
+				<li>搜索结果4</li>
+				<li>搜索结果5</li>
+				<li>搜索结果6</li>
+				<li>搜索结果7</li>
+				<li>搜索结果8</li>				
+			</ul>
+		</div>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script>
+			$('#search-input').bind('keyup',function(){
+				var searchText = $('#search-input').val();
+//				$.get('http://www.yy.com/u/works/s?yyno='+searchText+'&p=1',function(d){
+//					var page = d.AS.Results[0].Suggests;
+//					var html = '';
+//					for(var i=0;i<d.length;i++){
+//					html+='<li>'+d[i].Txt+'</li>';
+//					}
+//					$('#search-results').html(html);
+					$('#search-suggest').show().css({
+					top:$('#search-form').offset().top+$('#search-form').height()+5,
+					left:$('#search-form').offset().left,
+					position:'absolute'
+				});
+//				},'jsonp');
+			});
+		$('document').bind('click',function(){
+				$('#search-suggest').hide();
+			});
+		</script>
+	</body>
+</html>

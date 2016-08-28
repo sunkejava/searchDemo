@@ -1,0 +1,233 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>taobao search demo</title>
+	<script src="js/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+		function show(){
+         var random_bg=parseInt(Math.random()*66);
+<!-- 		 alert(random_bg); -->
+         var bg='url(img/bg-'+random_bg+'.jpg)';
+         $("body").css("background-image",bg);
+		}
+		</script>
+	<style type= "text/css">
+		@font-face {
+			  font-family: 'iconfont';
+			  src: url('http://at.alicdn.com/t/font_1472286029_235907.eot'); /* IE9*/
+			  src: url('http://at.alicdn.com/t/font_1472286029_235907.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+			  url('http://at.alicdn.com/t/font_1472286029_235907.woff') format('woff'), /* chrome、firefox */
+			  url('http://at.alicdn.com/t/font_1472286029_235907.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+			  url('http://at.alicdn.com/t/font_1472286029_235907.svg#iconfont') format('svg'); /* iOS 4.1- */
+			}
+		body{font:12px/1.5 tahoma,arial,sans-serif;}
+		a{
+			text-decoration:none;
+		}
+		.search-container{
+			position:relative;
+		}
+		.search-tips{
+			float:right;
+			padding:3px 0 0 6px;
+		}
+		.search-tips a {
+			color: #6c6c6c;
+		}
+		.search-button{
+			float:right;
+			
+		}
+		.btn-search{
+			background:rgba(255, 175, 255, 0.4);
+			width:100px;
+			height:45px;
+			border:0 none;
+			cursor:pointer;
+			font-size:25px;
+		}
+		.btn-search:hover{
+			background:rgba(255, 50, 255, 0.4);
+			width:100px;
+			height:45px;
+			border:0 none;
+			cursor:pointer;
+		}
+		.search-common-pannel{
+			height:39px;
+			background-color: rgba(255, 175, 255, 0.4);
+			overflow: hidden;
+			padding:3px 0 3px 77px;
+		}
+		.search-common-pannel input{
+			height:39px;
+			line-height:39px;
+			width:100%;
+			border:0 none;
+			outline: 0;
+			background:rgba(255, 255, 255, 0.4);
+		}
+		.search-common-pannel i {
+			position:absolute;
+			top:14px;
+			left:86px;
+			z-index:2;
+		}
+		.iconfont {
+				font-family: iconfont;
+				font-size: 12px;
+				font-style: normal;
+				color:#ccc;
+			}
+		ul{
+			list-style:none;
+			display:black;
+		}
+		ul,li{
+			padding:0;
+			margin:0;
+		}
+		.search-list{
+			position:absolute;
+			top:3px;
+			left:3px;
+			width:72px;
+			height:39px;
+			overflow:hidden;
+			background:rgba(255, 255, 125, 0.4);
+			border-left:1px solid #f6f6f6;
+			border-right:1px solid #e5e5e5;
+		}
+		.search-list li{
+			display:none;
+			height: 39px;
+			line-height: 39px;
+			overflow: hidden;
+			text-align:center;
+		}
+		.search-list li a{
+			color:#6c6c6c;
+		}
+		.search-list .selected{
+			background:rgba(255, 255, 85, 0.4);
+			display:block;
+		}
+		.trigger-hover{
+			display:block;
+			height: auto;
+		}
+		.out-hover{
+			height: 39px;
+		}
+		.trigger-hover li {
+			display:block;
+		}
+	</style>
+</head>
+<body onload="show()">
+	<div class = "search-container">
+		<div id = "search_tab" class = "search-list">
+			<ul>
+				<li id="tab_1" class = "selected">
+					<a href="#">YY神曲</a>
+				</li>
+				<li id="tab_2" class = "">
+					<a href="#">51AVI</a>
+				</li>
+				<li id="tab_3" class = "">
+					<a href="#">音悦台</a>
+				</li>
+				<li id="tab_4" class = "">
+					<a href="#">个人YY</a>
+				</li>
+			</ul>
+		</div>
+		<div class = "search-pannel">
+			<form>
+				<div class = "search-tips">
+					<a href = "#">
+						高级<br/>搜索
+					</a>
+				</div>
+				<div class = "search-button">
+					<button class = "btn-search" type = "submit">搜索
+					</button>
+				</div>
+				<div class = "search-common-pannel" >
+				<input type = "text" x-webkit-speech="">
+				<i class = "iconfont">&#xe63f;</i>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+	<script>
+		var getDOM = function(id){
+			return document.getElementById(id);
+		}
+		var addEvent = function(id,event,fn){
+			var el = getDOM(id)||document;
+			if(el.addEventListener){
+				el.addEventListener(event,fn,false);
+			}else if(el.attachEvent){
+				el.attachEvent('on'+event,fn);
+			}
+		}
+		
+		addEvent('search_tab','mouseover',function(){
+			if(this.className.indexOf('trigger-hover') < 0){
+			this.className+= ' trigger-hover';
+			}
+		});
+		
+
+		addEvent('tab_1','mouseover',function(){
+			if(this.className.indexOf('selected') < 0){
+			this.className +='selected';
+			}
+		});
+		addEvent('tab_1','mouseout',function(){
+			this.className = '';
+		});
+		
+		addEvent('tab_1','click',function(){
+			getDOM('search_tab').className='search-list';
+		});
+		
+		addEvent('tab_2','mouseover',function(){
+			if(this.className.indexOf('selected')< 0){
+			this.className ='selected';
+			}
+		});
+		addEvent('tab_2','mouseout',function(){
+			this.className = '';
+		});
+		addEvent('tab_2','click',function(){
+			getDOM('search_tab').className='search-list';
+		});
+		
+		addEvent('tab_3','mouseover',function(){
+			if(this.className.indexOf('selected')< 0){
+			this.className ='selected';
+			}
+		});
+		addEvent('tab_3','mouseout',function(){
+			this.className = '';
+		});
+		addEvent('tab_3','click',function(){
+			getDOM('search_tab').className='search-list';
+		});
+		
+		addEvent('tab_4','mouseover',function(){
+			if(this.className.indexOf('selected')< 0){
+			this.className ='selected';
+			}
+		});
+		addEvent('tab_4','mouseout',function(){
+			this.className = '';
+		});
+		addEvent('tab_4','click',function(){
+			getDOM('search_tab').className='search-list';
+		});
+	</script>
+</html>
