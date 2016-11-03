@@ -3,14 +3,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>taobao search demo</title>
 	<script src="js/jquery-1.10.2.min.js"></script>
-		<script type="text/javascript">
-		function show(){
-         var random_bg=parseInt(Math.random()*66);
-<!-- 		 alert(random_bg); -->
-         var bg='url(img/bg-'+random_bg+'.jpg)';
-         $("body").css("background-image",bg);
-		}
-		</script>
+		
 	<style type= "text/css">
 		@font-face {
 			  font-family: 'iconfont';
@@ -81,7 +74,7 @@
 			}
 		ul{
 			list-style:none;
-			display:black;
+			display:block;
 		}
 		ul,li{
 			padding:0;
@@ -120,18 +113,18 @@
 			height: 39px;
 		}
 		.trigger-hover li {
-			display:block;
+			display: block;
 		}
 	</style>
 </head>
-<body onload="show()">
+<body >
 	<div class = "search-container">
 		<div id = "search_tab" class = "search-list">
 			<ul>
-				<li id="tab_1" class = "selected">
+				<li id="tab_1" class = "">
 					<a href="#">YY神曲</a>
 				</li>
-				<li id="tab_2" class = "">
+				<li id="tab_2" class = "selected">
 					<a href="#">51AVI</a>
 				</li>
 				<li id="tab_3" class = "">
@@ -143,25 +136,34 @@
 			</ul>
 		</div>
 		<div class = "search-pannel">
-			<form>
 				<div class = "search-tips">
 					<a href = "#">
-						高级<br/>搜索
+						全能<br/>解析
 					</a>
 				</div>
 				<div class = "search-button">
-					<button class = "btn-search" type = "submit">搜索
+					<button class = "btn-search" onclick = "parse()">搜索
 					</button>
 				</div>
 				<div class = "search-common-pannel" >
-				<input type = "text" x-webkit-speech="">
-				<i class = "iconfont">&#xe63f;</i>
+				<input id="inputv" type = "text" x-webkit-speech="">
+				<i id = "inputi" class = "iconfont" >&#xe63f;</i>
 				</div>
-			</form>
 		</div>
+	</div>
+	
+	<div>
+		<iframe style="width: 630px; height: 475px;" name="iframe0" id="apid" src="" frameborder="0" data-id="">
+		
+		</iframe>
 	</div>
 </body>
 	<script>
+	function parse(){
+			//alert(getDOM('inputv').value);
+			var rtrp = "http://live.qqdzz.com/free.php?url="+getDOM('inputv').value;
+			getDOM("apid").src = rtrp;
+		}
 		var getDOM = function(id){
 			return document.getElementById(id);
 		}
@@ -173,61 +175,64 @@
 				el.attachEvent('on'+event,fn);
 			}
 		}
-		
+		addEvent('inputv','focus',function(){
+			if(this.value == ""){
+				getDOM('inputi').display ='';
+			}else{
+				getDOM('inputi').display = 'none';
+			}
+		});
 		addEvent('search_tab','mouseover',function(){
 			if(this.className.indexOf('trigger-hover') < 0){
 			this.className+= ' trigger-hover';
 			}
 		});
 		
+		addEvent('search_tab','mouseout',function(){
+			if(this.className.indexOf('trigger-hover') > 0){
+			this.className = 'search-list';
+			}
+		});
 
-		addEvent('tab_1','mouseover',function(){
+		addEvent('tab_1','click',function(){
+			getDOM('search_tab').className='search-list';
+			getDOM('tab_2').className='';
+			getDOM('tab_3').className='';
+			getDOM('tab_4').className='';
 			if(this.className.indexOf('selected') < 0){
 			this.className +='selected';
 			}
 		});
-		addEvent('tab_1','mouseout',function(){
-			this.className = '';
-		});
 		
-		addEvent('tab_1','click',function(){
-			getDOM('search_tab').className='search-list';
-		});
-		
-		addEvent('tab_2','mouseover',function(){
-			if(this.className.indexOf('selected')< 0){
-			this.className ='selected';
-			}
-		});
-		addEvent('tab_2','mouseout',function(){
-			this.className = '';
-		});
 		addEvent('tab_2','click',function(){
 			getDOM('search_tab').className='search-list';
-		});
-		
-		addEvent('tab_3','mouseover',function(){
+			getDOM('tab_1').className='';
+			getDOM('tab_3').className='';
+			getDOM('tab_4').className='';
 			if(this.className.indexOf('selected')< 0){
 			this.className ='selected';
 			}
+			
 		});
-		addEvent('tab_3','mouseout',function(){
-			this.className = '';
-		});
+		
 		addEvent('tab_3','click',function(){
 			getDOM('search_tab').className='search-list';
-		});
-		
-		addEvent('tab_4','mouseover',function(){
+			getDOM('tab_1').className='';
+			getDOM('tab_2').className='';
+			getDOM('tab_4').className='';
 			if(this.className.indexOf('selected')< 0){
 			this.className ='selected';
 			}
 		});
-		addEvent('tab_4','mouseout',function(){
-			this.className = '';
-		});
+		
 		addEvent('tab_4','click',function(){
 			getDOM('search_tab').className='search-list';
+			getDOM('tab_1').className='';
+			getDOM('tab_2').className='';
+			getDOM('tab_3').className='';
+			if(this.className.indexOf('selected')< 0){
+			this.className ='selected';
+			}
 		});
 	</script>
 </html>
